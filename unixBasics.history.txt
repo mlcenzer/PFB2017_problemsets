@@ -1,0 +1,49 @@
+    3  mkdir PFB2017_problemsets
+    5  cd ~/PFB2017_problemsets/
+    6  echo "# PFB2017_problemsets" >> README.md
+    7  fit init
+    8  git init
+    9  git add README.md
+   10  git commit -m "first commit"
+   11  git config --global --edit
+   12  git remote add origin https://github.com/mlcenzer/PFB2017_problemsets.git
+   13  git push -u origin master
+   14  nano git_exercises.txt
+   15  nano git_exercises.txt
+   16  git add git_exercises.txt
+   17  git commit -m 'added a line of text'
+   18  git push origin master
+   19  cd ~/problemsets/
+   21  cp -R ~/problemsets/ ~/PFB2017_problemsets/
+   23  cd ~/PFB2017_problemsets/
+   25  git add *
+   26  git commit -m 'adding previous problem set files'
+   27  git push
+   28  ssh-keygen -t rsa -b 4096 -C "mlcenzer@ucdavis.edu"
+   29  eval "$(ssh-agent -s)"
+   30  ssh-add -K ~/.ssh/id_rsa
+   31  pbcopy < ~/.ssh/id_rsa.pub
+   33  mkdir files
+   36  mv cancer_genes.fasta ~/files/
+   38  mv cancer_genes.fasta ./files/
+   39  cd ~/PFB2017_problemsets/fi
+   40  cd ~/PFB2017_problemsets/files/
+   43  git add ./cancer_genes.fasta 
+   44  git commit -m 'adding cancer_genes.fasta'
+   46  git push
+   47  nano mysequences.txt
+   49  git add mysequences.txt 
+   50  git commit -m "a fasta file"
+   51  git push
+   52  mkdir fastas
+   54  mv cancer_genes.fasta ./fastas/
+   56  cd ./fastas
+   58  cd ..
+   63  cd ..
+   65  ls -a
+   66  git add all *
+   67  git add ./files/
+   68  git commit -m "a folder of files"
+   69  git push
+   70  git status
+   73  history > unixBasics.history.txt
