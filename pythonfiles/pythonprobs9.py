@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 
 import re
-##Q4: Modify your function to take two command line arguments.
+
+import sys
+
+##Q4: Modify your function to take two command line arguments. I'm not doing this one, because I'm playing beach volleyball!
 
 dna='''GATGGGATTGGGGTTTTCCCCTCCCATGTGCTCAAGACTGGCGCTAAAAGTTTTGAGCTTCTCAAAAGTCTAGAGCCACC
 GTCCAGGGAGCAGGTAGCTGCTGGGCTCCGGGGACACTTTGCGTTCGGGCTGGGAGCGTGCTTTCCACGACGGTGACACG
@@ -11,7 +14,7 @@ TGGATGATTTGATGCTGTCCCCGGACGATATTGAACAATGGTTCACTGAAGACCCAGGTCCAGATGAAGCTCCCAGAATG
 CCAGAGGCTGCTCCCCCCGTGGCCCCTGCACCAGCAGCTCCTACACCGGCGGCCCCTGCACCAGCCCCCTCCTGGCCCCT
 GTCATCTTCT'''
 
-def make_generaller_paragraphs(sequence,length):
+def make_paragraphs_(sequence,length):
         sequence=sequence.replace('\n','')
         matches=re.findall(r'[ATCG]{{,{}}}'.format(length),sequence) #the format symbol for an open curly bracket is two open curly brackets
         return '\n'.join(matches)

@@ -1,0 +1,74 @@
+#!/usr/bin/env python3
+
+
+#functions for mean and standard deviation because Lukas and Jessen are unintentionally hazing me
+
+def mean(anylist):
+    list_sum=0
+    for n in anylist:
+        list_sum+=n
+    list_mean=list_sum/len(anylist)
+    return list_mean
+
+def stddev(anylist, anylist_mean):
+    square_sum=0
+    for n in anylist:
+        square_sum+=(n-anylist_mean)**2
+    stddev=(square_sum/(len(anylist)-1))**(1/2)
+    return(stddev)
+
+
+#Read in fastq file
+fastq_file=open("test.pfb.fastq","r")
+
+##Q2: Trim each sequence in a fastq file starting from the first base in each sequence lower than Q=20 to the end of the sequence.
+##Unfortunately this is not going to be fast. I need to eat.
+
+current_line=0
+
+for line in fastq_file:
+    current_line+=1 #start at 1, moves down line by line
+#    if current_line%4==2: #references sequences
+#        current_line.append(len(line)) #add sequence length to length_list
+    if current_line%4==0: #references quality string
+        qual_list.append([]) #add a new list for a new gene
+        for char in line: #Go through all characters in quality string
+            qual_list[int((current_line/4)-1)].append(ord(char)) #append quality scores to gene list
+
+
+
+##Q1
+length_file=0
+length_list=[]
+qual_list=[]
+
+#make a list of sequences in length_list. Also make a list of lists of quality characters.
+#Note in the final nested for loop, that 1) dividing two integars returns a float; 2) quality scores are always on lines that are exactly divisible by 4.
+
+for line in fastq_file:
+    length_file+=1 #start at 1, moves down line by line
+    if length_file%4==2: #references sequences
+        length_list.append(len(line)) #add sequence length to length_list
+    elif length_file%4==0: #references quality string
+        qual_list.append([]) #add a new list for a new gene
+        for char in line: #Go through all characters in quality string
+            qual_list[int((length_file/4)-1)].append(ord(char)) #append quality scores to gene list
+            
+
+length_mean=mean(length_list)
+length_std=stddev(length_list, length_mean)
+#print(qual_list)
+qual_means=[]
+
+for gene in qual_list:
+    qual_means.append(mean(gene))
+
+qual_mean=mean(qual_means)
+
+#print(qual_list)
+#print(qual_means, qual_mean)
+
+#print(length_mean, length_std)
+
+#don't forget to close it!
+fastq_file.close()
