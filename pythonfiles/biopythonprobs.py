@@ -4,14 +4,23 @@ from Bio import SeqIO
 
 import re
 
+##"Extra credit" Blast a protein against the S. paratyphi B proteins. 
+##You can do this remotely or locally with a blast binary or with biopython.
+
+#let's pick a protein!
+
+
+
 ##Q3: Make a new fasta file of all the sequences containing the species "Salmonella paratyphi B"
 ##Call the file s_paratyphi.prot.fa
 
+salm_file=open("s_paratyphi.prot.fa", 'w')
 
+for seq_record in SeqIO.parse("uniprot_sprot.fasta", "fasta"):
+    if "OS=Salmonella paratyphi B" in seq_record.description:
+        SeqIO.write(seq_record, salm_file, "fasta")
 
-for seq_record in SeqIO.parse("short_uniprot_sprot.fasta", "fasta"):
-    
-
+salm_file.close() #don't forget to close your file!
 
 ##Q1-2
 
