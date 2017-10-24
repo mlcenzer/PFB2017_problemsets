@@ -1,0 +1,74 @@
+
+
+1. Use the FASTA search page [pgm] to compare Honey bee glutathione transferase D1 NP_001171499/ H9KLY5_APIME [seq] (gi|295842263) to the PIR1 Annotated protein sequence database. Be sure to press , not .
+
+Take a look at the output.
+i. How long is the query sequence?
+217
+ii. How many sequences are in the PIR1 database?
+13144
+iii. What scoring matrix was used?
+BL50 matrix (Blossom 50)
+
+iv. What were the gap penalties? (what is the penalty for a one-residue gap? two residues?)
+open/ext: -10/-2
+gap open penalty: -10; penalty for starting the gap, -2 for each residue in the gap
+Penalty for a one-residue gap:-12
+Penalty for two residues:-14
+To calculate gap penalty, -10+-2*#residues in gap
+
+v. What are each of the numbers after the description of the library sequence? Which one is best for inferring homology?
+()  	    	    		 opt	  	      bits	 E() 	       	     	%_id				%_sim                             alen
+length of library sequence	raw match score	      normalized score	expectation   	how many aas are identical?	how many aas improved the score?  missed it
+
+E() is the best for inferring homology
+
+vi. How similar is the highest scoring sequence? What is the difference between %_id and %_sim? Why is there no 100% identity match?
+81.1% similar, 57.8% identical. No 100% match because this protein is not in the database.
+
+vii. Looking at an alignment, where are the boundaries of the alignment (the best local region)? How many gaps are in the best alignment? The second best?
+(3-208 positions in query and 2-206 positions in library)     one gap in the best alignment
+
+
+b. homologs, non-homologs, and the statistical control.
+
+i. what is the highest scoring non-homolog?
+
+Well, it depends on your cutoff choice, but if we use 0.001 as our lowest acceptable E() score, then the highest scoring non-homolog is 
+sp|P14942|GSTA4_RAT Glutathione S-transferase alpha-4;  ( 222)  120 39.1  0.0011 0.250 0.600  160 align          
+But looking at the alignment diagram, this one looks great, so let's call it:
+sp|Q9SI20|EF1D2_ARATH Elongation factor 1-delta 2; Shor ( 231)   95 32.5    0.11 0.293 0.638   58 align 
+Ok, apparently it's not this one either. We seem to be playing fast and loose here.
+"general re-search"
+This is being identified as the highest scoring non-homolog:
+sp|P08355|GB_SUHVF Envelope glycoprotein B; Short=gB; G ( 913)   89 30.5     1.7 0.288 0.514  111 align     
+
+
+
+ii.Most distant homology shown: sp|P14942|GSTA4_RAT Glutathione S-transferase alpha-4;  ( 222)  120 39.1  0.0011 0.250 0.600  160 align	
+Could there be more distant homologs? Yeah, probably, this output is confusing.
+There are also colored boxes in the table that refer to families of domains that are shared between your query and your library sequence. I'm not really sure what degree of similarity qualifies you for that but does not qualify you for homology. Must be something about function.
+
+c. Domains and alignment regions.
+
+i. There are three parts of the domain display, the domain structure of the query (top) sequence (if available), the domain structure of the library (bottom) sequence, and the domain alignment boundaries in the middle (inside the alignment box). The boundaries and color of the alignment domain coloring match the Region: sub-alignment scores.
+
+ii. Note that the alignment of Apis mellifera GSTD1 and SSPA_ECO57 includes portions of both the N-terminal and the C-terminal domains, but neither domain is completely aligned. Why do you think the alignments do not include the complete domains?
+
+Presumably including them reduced their score.
+
+iii. Is your explanation for the partial domain alignment consistent with the argument that domains have a characteristic length? How might you test whether a complete domain is present?
+
+Well, first I would read about domains and learn how they are defined. Then I would use that definition to understand this question.
+
+Can see the whole domain of the query sequence in the first alignment, so clearly it's there.
+
+
+
+
+
+
+
+
+
+
