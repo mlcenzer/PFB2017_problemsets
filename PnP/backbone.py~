@@ -1,0 +1,40 @@
+#!/usr/bin/env python3
+
+
+#import modules
+import * from user
+import os
+
+
+
+
+#open link to command line
+
+input statements here
+
+#initialize global variables
+
+prisoner=user.Prisoner()
+
+
+
+#game begins
+while user.hp>0:
+    while user.escapeStatus==False:
+        print("Your eyelids flutter open. You look up to see a dank, mossy ceiling and stone walls with one bleak, barred window. You sit up and look around. You see an open door in front you, candlelight flickering behind it. You stumble blearily to your feet and walk through the door. Do you go [left] or [right]?")
+        #sample a location when we get to that
+        "You walk down the hallway and see a set of stairs leading down into the dark. Do you go down the stairs?[Y or N]"
+        if yes:
+            
+            elif:
+                else:
+                    print(sass)
+
+print("Game Over.")
+
+
+
+
+
+    
+
